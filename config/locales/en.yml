@@ -343,9 +343,9 @@ en:
       tasks:
         destroy:
           success: "Task was successfully deleted."
-      page_texts:
+      custome_pages:
         update:
-          success: "Page text updated successfully!" 
+          success: "Custome page updated successfully!" 
       matches:
         create:
           success: "Pet successfully adopted."

@@ -220,14 +220,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_160107) do
     t.index ["slug"], name: "index_organizations_on_slug", unique: true
   end
 
-  create_table "page_texts", force: :cascade do |t|
+  create_table "custome_pages", force: :cascade do |t|
     t.bigint "organization_id", null: false
     t.string "hero"
     t.text "about"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "adoptable_pet_info"
-    t.index ["organization_id"], name: "index_page_texts_on_organization_id"
+    t.index ["organization_id"], name: "index_custome_pages_on_organization_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -358,7 +358,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_160107) do
   add_foreign_key "matches", "pets"
   add_foreign_key "organization_profiles", "locations"
   add_foreign_key "organization_profiles", "organizations"
-  add_foreign_key "page_texts", "organizations"
+  add_foreign_key "custome_pages", "organizations"
   add_foreign_key "pets", "organizations"
   add_foreign_key "questions", "forms"
   add_foreign_key "staff_accounts", "organizations"

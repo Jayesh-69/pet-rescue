@@ -1,7 +1,7 @@
 require "test_helper"
 
 class Organizations::CreateServiceTest < ActiveSupport::TestCase
-  test "it creates page_text when organization is created" do
+  test "it creates custome_page when organization is created" do
     args = {
       location: {
         country: "Mexico",
@@ -20,6 +20,6 @@ class Organizations::CreateServiceTest < ActiveSupport::TestCase
     }
 
     Organizations::CreateService.new.signal(args)
-    assert_not Organization.last.page_text.nil?
+    assert_not Organization.last.custome_page.nil?
   end
 end

@@ -1,13 +1,13 @@
-<% breadcrumb :page_text %>
+<% breadcrumb :custome_page %>
 
 <%= render "components/dashboard/page" do |p| %>
-  <% p.header_title "Page Text" %>
+  <% p.header_title "Custom Page" %>
   <% p.header_subtitle "Edit your page" %>
   <% p.content do %>
     <section id="account_select">
       <div>
         <div>
-          <%= render "form", page_text: @page_text %>
+          <%= render "form", custome_page: @custome_page %>
         </div>
       </div>
     </section>

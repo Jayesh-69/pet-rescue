@@ -1,25 +1,25 @@
-class Organizations::Staff::PageTextsController < Organizations::BaseController
+class Organizations::Staff::CustomPagesController < Organizations::BaseController
   layout "dashboard"
-  before_action :set_page_text, only: %i[edit update]
+  before_action :set_custome_page, only: %i[edit update]
   def edit
   end
 
   def update
-    if @page_text.update(page_text_params)
-      redirect_to edit_staff_page_text_path, notice: t(".success")
+    if @custome_page.update(custome_page_params)
+      redirect_to edit_staff_custome_page_path, notice: t(".success")
     else
-      redirect_to edit_staff_page_text_path, alert: @page_text.errors.full_messages.to_sentence
+      redirect_to edit_staff_custome_page_path, alert: @custome_page.errors.full_messages.to_sentence
     end
   end
 
   private
 
-  def page_text_params
-    params.require(:page_text).permit(:hero, :about, :hero_image, :adoptable_pet_info, about_us_images: [])
+  def custome_page_params
+    params.require(:custome_page).permit(:hero, :about, :hero_image, :adoptable_pet_info, about_us_images: [])
   end
 
-  def set_page_text
-    @page_text = PageText.first
-    authorize! @page_text
+  def set_custome_page
+    @custome_page = CustomPage.first
+    authorize! @custome_page
   end
 end

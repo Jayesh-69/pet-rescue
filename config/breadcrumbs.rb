@@ -15,8 +15,8 @@ crumb :organization_profile do |organization|
   link "Edit Profile", edit_staff_organization_profile_path(organization)
 end
 
-crumb :page_text do |page_text|
-  link "Edit Page Text", edit_staff_page_text_path(page_text)
+crumb :custome_page do |custome_page|
+  link "Edit Custom Page", edit_staff_custome_page_path(custome_page)
 end
 
 crumb :staff_index do
